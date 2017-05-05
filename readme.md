@@ -5,7 +5,7 @@
 
 ##   springboot-mybatis-pagehelper-myself说明
 
-*     1.创建 springboot项目，整合mybatis  通用mapper    使用pageHelper进行分页                                    20170505
+*     1.创建 springboot项目，整合mybatis  通用mapper    使用pageHelper进行分页                    20170505
 
 
 
