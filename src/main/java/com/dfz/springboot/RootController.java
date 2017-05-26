@@ -18,7 +18,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 @MapperScan(basePackages="com.dfz.springboot.mapper")
 public class RootController{
-	
+
+
 	
     public static void main(String[] args) throws Exception {
     	SpringApplication  ap=new SpringApplication(RootController.class);  	
