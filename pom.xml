@@ -122,9 +122,34 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <!--配置mbg-->
+            <!--此处应注意mybatis-generator-maven-plugin的版本-->
+            <!--较低版本的依赖会导致xml中包含@mbg.generator注释的代码不会被覆盖，造成增量叠加问题-->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.5</version>
+                <configuration>
+                    <!--generator配置文件所在位置-->
+                    <configurationFile>${basedir}/src/main/resources/generatorConfig.xml</configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>tk.mybatis</groupId>
+                        <artifactId>mapper</artifactId>
+                        <version>3.4.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
 		</plugins>
 	</build>
-  
-  
-  
 </project>
