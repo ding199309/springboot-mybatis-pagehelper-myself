@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.dfz.springboot.annotation.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +32,8 @@ public class CityController {
 	@Autowired
 	private CityService  cityService;
 	
-	
+
+	@Log("获取list")
 	@RequestMapping("/list")
 	public void  cityList(HttpServletResponse response) throws IOException{		
 		List<City> list=cityService.findAll();	
@@ -42,7 +44,7 @@ public class CityController {
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(listout);
 	}
-	
+	@Log("获取pageList")
 	@RequestMapping("/pageList")
 	public void  pageList(HttpServletResponse response) throws IOException{		
 		PageInfo<City> page=cityService.findByPage();
