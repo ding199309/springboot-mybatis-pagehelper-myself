@@ -42,6 +42,7 @@ public class CityController {
 			listout.add(list.get(i).getName());
 		}
 		response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
 		response.getWriter().print(listout);
 	}
 	@Log("获取pageList")
@@ -50,6 +51,7 @@ public class CityController {
 		PageInfo<City> page=cityService.findByPage();
 		List<City> list=page.getList();
 		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
 		response.getWriter().print(JSONArray.toJSONString(list));
 	}
 
